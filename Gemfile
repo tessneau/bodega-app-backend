@@ -36,6 +36,7 @@ gem 'faker'
 gem 'jwt'
 
 #serializers
+# https://github.com/rails-api/active_model_serializers/tree/0-10-stable
 gem 'active_model_serializers'
 
 group :development, :test do
