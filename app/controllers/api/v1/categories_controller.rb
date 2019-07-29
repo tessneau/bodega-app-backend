@@ -10,7 +10,10 @@ module Api
     def create
       category = Category.create(category_params)
       if category.valid?
-        render category
+        render json: category
+      else
+        render json: { errors: category.errors.full_messages }, status: :unprocessable_entity
+      end
     end
 
     def show
