@@ -22,8 +22,13 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
+<<<<<<< HEAD
     user_id = decoded_token[0]["user_id"]
     User.find(user_id)
+=======
+    # user_id = decoded_token[0]["user_id"]
+    User.find(1)
+>>>>>>> 138678fe08cdc8bbce23ba94fc4dbf30dd0a4947
   end
 
 end
