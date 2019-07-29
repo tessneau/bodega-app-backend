@@ -7,7 +7,6 @@ module Api
       is_authenticated = user.authenticate(params[:password]) if user
 
       if is_authenticated
-        # byebug
         render json: { token: encode_token(user) }
       else
         render json: { errors: ["Wrong username or password. r u real"] }, status: :unprocessable_entity

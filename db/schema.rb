@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.decimal "total_price", precision: 10, scale: 2, default: "0.0"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.decimal "price", precision: 10, scale: 2
+    t.decimal "price", precision: 10, scale: 2, default: "0.0"
     t.string "img_url"
     t.bigint "category_id"
     t.datetime "created_at", null: false
