@@ -6,6 +6,7 @@ module Api
         user = User.create(user_params)
 
         if user.valid?
+          # create cart
           render json: { token: encode_token(user) }
         else
           render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
@@ -13,7 +14,9 @@ module Api
       end
 
       def profile
-        render json: current_user
+        render json: current_user.to_json(include: {
+          carts: {include: :items}
+          })
       end
 
       private
