@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post '/login', to: 'authentication#create'
       post '/signup', to: 'users#create'
       get '/profile', to: 'users#profile'
+      get '/categories/:name', to: 'categories#show'
       resources :users
       resources :cart_items
       resources :items

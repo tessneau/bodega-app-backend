@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
     JWT.decode(token, secret, true, { algorithm: 'HS256' })
   end
 
-  def current_user
+  def super_current_user
     user_id = decoded_token[0]["user_id"]
     User.find(user_id)
   end
