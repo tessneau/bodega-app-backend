@@ -6,6 +6,7 @@ module Api
         user = User.create(user_params)
 
         if user.valid?
+          Cart.create(user: user)
           render json: { token: encode_token(user) }
         else
           render json: { errors: user.errors.full_messages }, status: :unprocessable_entity

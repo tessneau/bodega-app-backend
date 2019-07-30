@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Cart.destroy_all
+Category.destroy_all
 
 
 ############# USERS #############
@@ -29,6 +32,8 @@ cola = Item.create(name: "Coca Cola", description: "an ice cold can", price: 1.5
 ############# CART ITEMS #############
 
 tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id)
+CartItem.create(cart_id: tCart.id, item_id: apple.id)
+ CartItem.create(cart_id: tCart.id, item_id: banana.id)
 danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id)
 
 

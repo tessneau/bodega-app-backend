@@ -7,12 +7,14 @@ module Api
         render json: categories
       end
 
-      def create
-        category = Category.create(category_params)
-        if category.valid?
-          render category
-        end
+    def create
+      category = Category.create(category_params)
+      if category.valid?
+        render json: category
+      else
+        render json: { errors: category.errors.full_messages }, status: :unprocessable_entity
       end
+    end
 
       def show
         name = params[:name].capitalize
