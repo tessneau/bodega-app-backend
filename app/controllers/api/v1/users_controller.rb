@@ -13,7 +13,9 @@ module Api
       end
 
       def profile
-        render json: current_user
+        render json: super_current_user.to_json(include: {
+          carts: {include: :items}
+        })
       end
 
       private
