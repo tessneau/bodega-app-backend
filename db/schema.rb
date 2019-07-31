@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.bigint "shelf_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shelf_id"], name: "index_categories_on_shelf_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -49,6 +51,12 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
+  create_table "shelves", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -60,5 +68,6 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
   add_foreign_key "carts", "users"
+  add_foreign_key "categories", "shelves"
   add_foreign_key "items", "categories"
 end
