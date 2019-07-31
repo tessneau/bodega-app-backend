@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   enable_extension "plpgsql"
 
   create_table "cart_items", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price", precision: 10, scale: 2, default: "0.0"
     t.bigint "cart_id"
     t.bigint "item_id"
     t.datetime "created_at", null: false
