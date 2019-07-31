@@ -1,0 +1,2 @@
+class ShelvesController < ApplicationController
+end

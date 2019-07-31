@@ -19,10 +19,21 @@ daniela = User.create(username: "Daniela", password: "cats")
 tCart = Cart.create(user_id: tess.id)
 dCart = Cart.create(user_id: daniela.id)
 
+########### SHELVES ############
+left = Shelf.create(name: "Left")
+right = Shelf.create(name: "Right")
+
 ########### CATEGORIES ############
-fruits = Category.create(name: "Fruits")
-chips = Category.create(name: "Chips")
-drinks = Category.create(name: "Drinks")
+fruits = Category.create(name: "Fruits", shelf: left)
+chips = Category.create(name: "Chips", shelf: left)
+drinks = Category.create(name: "Drinks", shelf: right)
+Category.create(name: "Ice Cream", shelf: right)
+Category.create(name: "Candy", shelf: right)
+Category.create(name: "Gum", shelf: right)
+Category.create(name: "Canned Food", shelf: left)
+Category.create(name: "Cereal", shelf: left)
+Category.create(name: "Lottery Tickets", shelf: right)
+
 
 ############### ITEMS ###############
 apple = Item.create(name: "Apple", description: "a delicious upstate NY red apple", price: 1.50, img_url: "https://images.vexels.com/media/users/3/145460/isolated/preview/d08a1157100d2e42f31b4a752e71c33b-apple-illustration-by-vexels.png", category_id: fruits.id)

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   namespace :api do
     namespace :v1 do
       post '/login', to: 'authentication#create'
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
       resources :users
       resources :cart_items
       resources :items
+      resources :shelves
       resources :categories
       resources :carts
     end
