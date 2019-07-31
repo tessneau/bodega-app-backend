@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
 
   create_table "cart_items", force: :cascade do |t|
     t.string "name"
+    t.string "img_url"
     t.decimal "price", precision: 10, scale: 2, default: "0.0"
     t.bigint "cart_id"
     t.bigint "item_id"

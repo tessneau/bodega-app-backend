@@ -43,10 +43,10 @@ cola = Item.create(name: "Coca Cola", description: "an ice cold can", price: 1.5
 
 ############# CART ITEMS #############
 
-tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id, name: cola.name, price: cola.price)
-CartItem.create(cart_id: tCart.id, item_id: apple.id, name: apple.name, price: apple.price)
- CartItem.create(cart_id: tCart.id, item_id: banana.id, name: banana.name, price: banana.price)
-danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id, name: lays.name, price: lays.price)
+tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id, name: cola.name, price: cola.price, img_url: cola.img_url)
+CartItem.create(cart_id: tCart.id, item_id: apple.id, name: apple.name, price: apple.price, img_url: apple.img_url)
+ CartItem.create(cart_id: tCart.id, item_id: banana.id, name: banana.name, price: banana.price, img_url: banana.img_url)
+danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id, name: lays.name, price: lays.price, img_url: lays.img_url)
 
 
 puts "GOOD SEEDING MATE 🌱"
