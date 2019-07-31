@@ -14,7 +14,6 @@ module Api
           #updates cart total
           cart = cart_item.cart
           cart.update(total_price: cart.new_total)
-
           render json: cart_item
         else
           render json: { errors: cart_item.errors.full_messages }, status: :unprocessable_entity
@@ -29,7 +28,7 @@ module Api
       private
 
       def cart_item_params
-        params.require(:cart_item).permit(:cart_id, :item_id)
+        params.require(:cart_item).permit(:cart_id, :item_id, :name, :price)
       end
 
     end

@@ -21,7 +21,7 @@ module Api
     end
 
     def update
-      #update total price
+      debugger
     end
 
     private

@@ -24,15 +24,15 @@ left = Shelf.create(name: "Left")
 right = Shelf.create(name: "Right")
 
 ########### CATEGORIES ############
-fruits = Category.create(name: "Fruits", shelf: left)
-chips = Category.create(name: "Chips", shelf: left)
-drinks = Category.create(name: "Drinks", shelf: right)
-Category.create(name: "Ice Cream", shelf: right)
-Category.create(name: "Candy", shelf: right)
-Category.create(name: "Gum", shelf: right)
-Category.create(name: "Canned Food", shelf: left)
-Category.create(name: "Cereal", shelf: left)
-Category.create(name: "Lottery Tickets", shelf: right)
+fruits = Category.create(name: "Fruits", shelf_id: left.id)
+chips = Category.create(name: "Chips", shelf_id: left.id)
+Category.create(name: "Canned Food", shelf_id: left.id)
+Category.create(name: "Cereal", shelf_id: left.id)
+drinks = Category.create(name: "Drinks", shelf_id: right.id)
+Category.create(name: "Ice Cream", shelf_id: right.id)
+Category.create(name: "Candy", shelf_id: right.id)
+Category.create(name: "Gum", shelf_id: right.id)
+Category.create(name: "Lottery Tickets", shelf_id: right.id)
 
 
 ############### ITEMS ###############
@@ -43,10 +43,10 @@ cola = Item.create(name: "Coca Cola", description: "an ice cold can", price: 1.5
 
 ############# CART ITEMS #############
 
-tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id)
-CartItem.create(cart_id: tCart.id, item_id: apple.id)
- CartItem.create(cart_id: tCart.id, item_id: banana.id)
-danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id)
+tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id, name: cola.name, price: cola.price)
+CartItem.create(cart_id: tCart.id, item_id: apple.id, name: apple.name, price: apple.price)
+ CartItem.create(cart_id: tCart.id, item_id: banana.id, name: banana.name, price: banana.price)
+danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id, name: lays.name, price: lays.price)
 
 
 puts "GOOD SEEDING MATE 🌱"
