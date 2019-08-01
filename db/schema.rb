@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   create_table "cart_items", force: :cascade do |t|
     t.string "name"
     t.string "img_url"
-    t.decimal "price", precision: 10, scale: 2, default: "0.0"
+    t.integer "price", default: 0
     t.bigint "cart_id"
     t.bigint "item_id"
     t.datetime "created_at", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.decimal "total_price", precision: 10, scale: 2, default: "0.0"
+    t.integer "total_price", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.decimal "price", precision: 10, scale: 2, default: "0.0"
+    t.integer "price", default: 0
     t.string "img_url"
     t.bigint "category_id"
     t.datetime "created_at", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_210047) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.decimal "wallet", precision: 10, scale: 2, default: "10.0"
+    t.integer "wallet", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
