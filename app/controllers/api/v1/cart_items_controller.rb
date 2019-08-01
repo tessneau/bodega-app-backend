@@ -10,7 +10,6 @@ module Api
       def create
         cart_item = CartItem.create(cart_item_params)
         if cart_item.valid?
-
           #updates cart total
           cart = cart_item.cart
           cart.update(total_price: cart.new_total)
