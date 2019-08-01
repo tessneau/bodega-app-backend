@@ -21,7 +21,7 @@ module Api
     end
 
     def update
-      debugger
+      byebug
     end
 
     private

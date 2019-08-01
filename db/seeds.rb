@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Cart.destroy_all
 Item.destroy_all
 Category.destroy_all
-
 
 ############# USERS #############
 tess = User.create(username: "Tess", password: "boba")
@@ -60,10 +52,10 @@ haa = Item.create(name: "Haagen Dazs Caramel Cone", description: "treat yo self 
 big = Item.create(name: "Blue Bunny Ice Cream", description: "a big treat yo self day", price: 6, img_url: "https://wellsmanagedcontent.blob.core.windows.net/products/blue-bunny/vanilla-bean.v5.png ", category_id: cream.id)
 ############# CART ITEMS #############
 
-tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id, name: cola.name, price: cola.price, img_url: cola.img_url)
-CartItem.create(cart_id: tCart.id, item_id: apple.id, name: apple.name, price: apple.price, img_url: apple.img_url)
- CartItem.create(cart_id: tCart.id, item_id: banana.id, name: banana.name, price: banana.price, img_url: banana.img_url)
-danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id, name: lays.name, price: lays.price, img_url: lays.img_url)
+# tessCartItem = CartItem.create(cart_id: tCart.id, item_id: cola.id, name: cola.name, price: cola.price, img_url: cola.img_url)
+# CartItem.create(cart_id: tCart.id, item_id: apple.id, name: apple.name, price: apple.price, img_url: apple.img_url)
+#  CartItem.create(cart_id: tCart.id, item_id: banana.id, name: banana.name, price: banana.price, img_url: banana.img_url)
+# danielaCartItem = CartItem.create(cart_id: dCart.id, item_id: lays.id, name: lays.name, price: lays.price, img_url: lays.img_url)
 
 
 puts "GOOD SEEDING MATE 🌱"

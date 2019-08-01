@@ -10,10 +10,9 @@ module Api
       def create
         cart_item = CartItem.create(cart_item_params)
         if cart_item.valid?
-
           #updates cart total
           cart = cart_item.cart
-          cart.update(total_price: cart.new_total)
+          cart.update(total_price: cart.add_new_total)
           render json: cart_item
         else
           render json: { errors: cart_item.errors.full_messages }, status: :unprocessable_entity
@@ -21,6 +20,9 @@ module Api
       end
 
       def destroy
+        cart = cart_item.cart
+        byebug
+        cart.update(total_price: cart.subtract_new_total)
         cart_item = CartItem.find(params[:id])
         cart_item.destroy
       end
