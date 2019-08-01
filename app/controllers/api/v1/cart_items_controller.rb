@@ -20,10 +20,9 @@ module Api
       end
 
       def destroy
-        cart = cart_item.cart
-        byebug
-        cart.update(total_price: cart.subtract_new_total)
         cart_item = CartItem.find(params[:id])
+        cart = cart_item.cart
+        cart.update(total_price: cart.subtract_new_total)
         cart_item.destroy
       end
 
