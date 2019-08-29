@@ -10,13 +10,13 @@ class UserSerializer < ActiveModel::Serializer
   def current_cart
     {id: object.carts.last.id,
      total_price: object.carts.last.total_price,
-     items: object.carts.last.items.map{|item| {id: item.id, name: item.name, description: item.description}}}
+     items: object.carts.last.cart_items.map{|item| {id: item.id, name: item.name, img_url: item.img_url, price: item.price}}}
   end
 
   def previous_cart
-    {id: object.carts[-1].id,
-     total_price: object.carts[-1].total_price,
-     items: object.carts[-1].items}
+    {id: object.carts[-2].id,
+     total_price: object.carts[-2].total_price,
+     items: object.carts[-2].cart_items.map{|item| {id: item.id, name: item.name, img_url: item.img_url, price: item.price}}}
   end
 
 end

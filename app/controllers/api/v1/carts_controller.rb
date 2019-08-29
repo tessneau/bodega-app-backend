@@ -9,10 +9,8 @@ module Api
 
     def create
       cart = Cart.create(user: super_current_user)
-      byebug
       super_current_user.update(wallet: params[:wallet])
-      render json: super_current_user.to_json(include: {
-        carts: {include: :cart_items} })
+      render json: super_current_user
     end
 
     def show
@@ -21,9 +19,9 @@ module Api
 
     end
 
-    def update
-      byebug
-    end
+    # def update
+    #   byebug
+    # end
 
     private
 
