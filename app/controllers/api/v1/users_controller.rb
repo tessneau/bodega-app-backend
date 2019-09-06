@@ -27,7 +27,8 @@ module Api
         # render json: User.find(1).to_json(include: {
         #   carts: {include: :cart_items}
         # })
-        render json: User.find(1)
+
+        render json: super_current_user
       end
 
       def update
