@@ -9,14 +9,15 @@ module Api
 
     def create
       cart = Cart.create(user: super_current_user)
-      render json: cart
+      byebug
+      super_current_user.update(wallet: params[:wallet])
+      render json: super_current_user.to_json(include: {
+        carts: {include: :cart_items} })
     end
 
     def show
       cart = Cart.find(params[:id])
-      render json: cart.to_json(include: [:items, user: {
-        only: [:id, :username, :wallet]
-        }])
+      render json: cart
 
     end
 

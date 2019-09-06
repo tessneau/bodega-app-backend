@@ -8,9 +8,4 @@ class Cart < ApplicationRecord
     prices.inject(0, :+)
   end
 
-  def subtract_new_total
-    prices = self.items.map {|item| item.price}
-    prices.inject(0, :-)
-  end
-
 end
