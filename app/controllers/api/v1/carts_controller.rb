@@ -9,7 +9,6 @@ module Api
 
     def create
       cart = Cart.create(user: super_current_user)
-      byebug
       super_current_user.update(wallet: params[:wallet])
       render json: super_current_user.to_json(include: {
         carts: {include: :cart_items} })
