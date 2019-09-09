@@ -4,6 +4,8 @@ La Bodega is an app that emulated the experience of shopping at your neighborhoo
 
 This is a Ruby on Rails API created using ActiveRecord.
 
+![app runthrough gif](https://giant.gfycat.com/FragrantSkinnyGemsbuck.gif)
+
 ## How to Install La Bodega API
 1. Use your terminal to navigate into the place where you want to clone La Bodega API's directory and `git clone` the url.
 2. In terminal run `bundle install` in order to install the necessary gems needed to run the backend.
