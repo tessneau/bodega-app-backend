@@ -2,8 +2,6 @@
 
 La Bodega is an app that emulated the experience of shopping at your neighborhood bodega/ corner store deli. La Bodega talks to it's backend La Bodega API which contains seeded instances of produce and the ability to manipulate a customer's cart found in the controllers. 
 
-This is a Ruby on Rails API created using ActiveRecord.
-
 ![app runthrough gif](https://giant.gfycat.com/FragrantSkinnyGemsbuck.gif)
 
 ## Installation
