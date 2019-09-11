@@ -15,7 +15,7 @@ rails s
 ```
 Copy the resulting url listed as `Listening on [url]` (often it will be localhost:3000), paste the url into your browser & voila. If there are problems, start by checking that the data has seeded by running `rails c`, then `User.all`
 
-## How to Use La Bodega API
+## Usage
 La Bodega API is needed in order to accept HTTP requests from it's frontend La Bodega. This allows users to:
 * Create, read, and update their accounts with the help of JavaScript Web Tokens and Bcrypt.
 * Manipulate a user's cart by adding, deleting, and updating cart item instances.
